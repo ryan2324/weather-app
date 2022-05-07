@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600&display=swap');
+body, html, * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+main{
+    position: relative;
+    height: 100vh;
+}
+.bgImgContainer{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    background-color: #fff;
+}
+.bgImgContainer img{
+    width: 100%;
+
+}
+.txtContainer{
+    z-index: 10;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    background-color: rgb(255,255,255, 0.1);
+    box-shadow: 20px 20px 50px 0px rgba(0,0,0, .5);
+    border-top: 1px solid rgb(255,255,255, 0.5);
+    border-left: 1px solid rgb(255,255,255, 0.5);
+    padding: 20px;
+    border-radius: 1rem;
+    backdrop-filter: blur(5px);
+    color: #000;
+}
+.txtContainer #weather{
+    font-size: 80px;
+    font-weight: 600;
+    white-space: nowrap;
+    
+}
+.txtContainer #city{
+    font-size: 40px;
+}
+.txtContainer #temp{
+    font-size: 48px;
+    font-weight: 600;
+}
+.weatherContainer{
+    display: flex;
+}
+
+.skeletonLoading{
+    width: 350px;
+    height: 250px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 35px;
+}
+.skeletonLoading span:nth-child(1){
+    display: inline-block;
+    width: 100%;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+}
+.skeletonLoading span:nth-child(2){
+    display: inline-block;
+    width: 50%;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+}
+.skeletonLoading span:nth-child(3){
+    display: inline-block;
+    width: 80%;
+    height: 20px;
+    background-color: rgb(255, 255, 255);
+}
+#permissionFailedContainer{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    font-weight: 600;
+}
+#permissionFailedContainer i{
+    font-size: 50px;
+}
+.reminder{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+}
+.reminder i{
+    font-size: 48px;
+    color: #fff;
+}
+.reminder h3{
+    font-size: 30px;
+    background-color: #fff;
+    padding: 12px 12px;
+    border-radius: 35px;
+    color: #000;
+}
+.tempContainer{
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+}
+.tempSwitch{
+    box-shadow: 0px 0px 3px -1px rgba(0,0,0,1) inset;
+    display: block;
+    width: 70px;
+    height: 35px;
+    background-color: rgb(143, 212, 143);;
+    padding: 2px;
+    border-radius: .25rem;
+    position: relative;
+}
+.tempSwitch #c, #f{
+    position: absolute;   
+    top: 10px;
+    z-index: 1;
+    font-size: 18px;
+    font-weight: 700;
+}
+.tempSwitch #f{
+    left: 10px;
+}
+.tempSwitch #c{
+    right: 10px;
+}
+.tempSwitch input{
+    display: none;
+}
+.tempSwitch span{
+    display: flex;
+    width: 50%;
+    height: 89%;
+    background-color: rgb(221, 138, 138);
+    align-items: center;
+    justify-content: center;
+    transition: all 400ms ease-in-out;
+    border-radius: .25rem;
+    z-index: 10;
+    position: absolute;
+    top: 2px;
+}
+.tempSwitch span i{
+    font-size: 24px;
+}
+.tempSwitch input:checked + span{
+    background-color: rgb(85, 140, 221);
+    transform: translateX(32px);
+}
+@media (max-width: 550px) {
+    .txtContainer #weather{
+        font-size: 50px;
+    }
+    #icon{
+        width: 60px;
+        height: 60px;
+    }
+    .txtContainer #city{
+        font-size: 40px;
+    }
+    .txtContainer #temp{
+        font-size: 48px;
+    }
+    @media (max-width: 350px) {
+        .txtContainer #weather{
+            font-size: 35px;
+        }
+        #icon{
+            width: 40px;
+            height: 40px;
+        }
+        .txtContainer #city{
+            font-size: 30px;
+        }
+        .txtContainer #temp{
+            font-size: 30px;
+        }
+    }
+}
